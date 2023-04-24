@@ -162,9 +162,7 @@ app.get('/home' ,(req,res) =>{
   })
   .then(results => {
     console.log(results.data) 
-    var data = results.data; 
-    // var data = JSON.parse(results.data);  
-    //let events = results.data._embedded.events;
+    var data = results.data.SearchResult.SearchResultItems; 
     res.render('pages/home',{data:data})
   })
   .catch(error => {
@@ -176,16 +174,9 @@ app.get('/home' ,(req,res) =>{
 });
 
 
-
-
-
-
-
 // *****************************************************
 // <!-- Section 5 : Start Server-->
 // *****************************************************
 // starting the server and keeping the connection open to listen for more requests
 module.exports = app.listen(3000);
-// app.listen(3000);
 console.log('Server is listening on port 3000');
-

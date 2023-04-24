@@ -2,7 +2,7 @@
 <%- include ('../partials/menu') %>
 
 <main>
-    <div class="container">
+    <!-- <div class="container">
       <h1>Login</h1>          
       <form action="/login" method="POST">
           <label for="username">Username</label>
@@ -19,21 +19,28 @@
           </p>
         </form>
         <div class="col"><%- include ('../partials/message') %></div>
-    </div>
+    </div> -->
     <div class="container">
         <!-- THE REST OF YOUR HTML CODE GOES HERE -->
-        <div class="row">
-          <% for(let i=0; i<events.length; i++){%>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-              <div class="card">
-                
-                  <h5 class="card-title"><%=events[i].name%></h5>
-                  <img class="card-img-top" src="<%= events[i].images[0].url%>" alt="https://daily.jstor.org/wp-content/uploads/2023/01/good_times_with_bad_music_1050x700.jpg">
-                  <h6 class="class-subtitle"><%=events[i].dates.start.localDate%></h6>
-                  <a href="<%= events[i].url%>" class="btn btn-primary">Book Now</a>
-                
-              </div>
-            </div>
+        <div class="list-group">
+          <% for(let i=0; i<data.length; i++){%>
+            <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"><%=data[i].MatchedObjectDescriptor.PositionTitle%></h5>
+                    <a href="<%= data[i].MatchedObjectDescriptor.ApplyURI%>" class="btn btn-primary">Apply Now</a>
+                    <small><%=data[i].MatchedObjectDescriptor.OrganizationName%></small>
+                </div>
+                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <small>Donec id elit non mi porta.</small>
+            </a> -->
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">List group item heading</h5>
+                  <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <small class="text-muted">Donec id elit non mi porta.</small>
+              </a>
           <%}%>
         </div>
       </div>
